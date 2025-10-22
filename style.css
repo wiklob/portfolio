@@ -1,4 +1,47 @@
 h1 {
-    color: blue;
+    color: blueviolet;
     font-size: 17px;
+    font-family: Roboto, sans-serif;
+    font-weight: 350;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 10px;
+    padding: 10px;
+}
+
+body {
+    margin: 60px 0 0 0;
+}
+
+page-content {
+    display: block;
+    margin: 150px auto 100px;
+    width: fit-content;
+}
+
+.header-title {
+    color: black;
+    text-decoration: none;
+    font-family: Roboto, sans-serif;
+}
+
+.header-content {
+    color: gray;
+    text-decoration: none;
+    font-family: Roboto, sans-serif;
+}
+
+.header-content.active {
+    color: RGBA(49, 49, 49, 100);
+}
+
+nav {
+    display: flex;
+    gap: 20px;
 }
