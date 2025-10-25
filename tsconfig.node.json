@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "jsx": "react-jsx",
+        "target": "es2022",
+        "lib": ["es2023"],
+        "module": "esnext",
+        "skipLibCheck": true,
+        "moduleResolution": "bundler",
+        "composite": true
+    },
+    "include": ["vite.config.ts"]
+}
