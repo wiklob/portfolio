@@ -4,6 +4,7 @@ import About from './About'
 import Projects from './Projects'
 import Blog from './Blog'
 import Home from './Home'
+import Spacecannon from './Spacecannon'
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/about" element={<About/ >} />
           <Route path="/projects" element={<Projects/ >} />
           <Route path="/blog" element={<Blog/ >} />
+          <Route path="/spacecannon" element={<Spacecannon/ >} />
         </Routes>
       </BrowserRouter>
       
