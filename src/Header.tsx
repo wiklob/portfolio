@@ -1,0 +1,15 @@
+import { NavLink } from "react-router-dom"
+import HomeHero from "./components/HomeHero"
+
+function Header() {
+    return <header> 
+        <nav>
+        <NavLink to="/" className="header-title"> Wiktor Łoboda </NavLink>
+        <NavLink to="/about" className="header-content"> about </NavLink>
+        <NavLink to="/projects" className="header-content"> my projects </NavLink>
+        <NavLink to="/blog" className="header-content"> blog </NavLink>
+        </nav>
+    </header>
+}
+
+export default Header
