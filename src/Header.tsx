@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom"
-import HomeHero from "./components/HomeHero"
 
 function Header() {
     return <header> 
