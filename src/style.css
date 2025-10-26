@@ -1,3 +1,9 @@
+.spacecannon-map {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .spacecannon-aim {
     position: fixed;
     width: 50px;
