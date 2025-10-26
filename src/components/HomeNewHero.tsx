@@ -5,5 +5,4 @@ function HomeNewHero() {
         </div>
     )
 }
-
 export default HomeNewHero
