@@ -391,20 +391,20 @@ function ShotResults(grid: string[][], x: number, y:number, color:string): strin
 function Spacecannon() {
     const position = useMousePosition();
     const mapRef = useRef<SVGSVGElement>(null);
-    const [voronoiData, setVoronoiData] = useState(()=> {
+    const [voronoiData, _setVoronoiData] = useState(()=> {
         //console.log("Generating new Voronoi");
         return Voronoi(SIZE, 100);
         
     });
     //generating the island for the first time
-    const [islands, setIslands] = useState<{cells: number[], color: string}[]>(() => {
+    const [islands, _setIslands] = useState<{cells: number[], color: string}[]>(() => {
         const genStart = Math.floor(Math.random()*SIZE); //where to start
         const adjacency = computeAdjacency(voronoiData.cells); //calc the adj
         const terrain = createIsland(genStart, adjacency, PROB); //create the terrain
         return [{cells: Array.from(terrain), color: '#777777'}];
     })
 
-    
+
     const cellColors = new Map<number, string>();
     islands.forEach(island => {
         island.cells.forEach(cellIndex => {
