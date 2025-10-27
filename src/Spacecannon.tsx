@@ -345,6 +345,27 @@ function VoronoiRenderer({vD, cellColors, size, mapRef}: {vD: {points: {x: numbe
     )
 }*/
 
+function UFORenderer({ufos, size}: {ufos: {id: number, x:number, y:number}[], size:number}) {
+    return (
+        <svg 
+        style={{position:'absolute', top: 0, left:0, pointerEvents:'none'}} width='100%' height='100%' viewBox={`0 0 ${size*10} ${size*10}`}
+        >
+            {ufos.map(ufo => (
+                <ellipse 
+                    key={ufo.id}
+                    cx={ufo.x*10} 
+                    cy={ufo.y*10}
+                    rx={25}//radii x
+                    ry={8}//radii y
+                    fill="red"
+                    stroke="darkened"
+                    strokeWidth={1}
+                />
+            ))}
+        </svg>
+    )
+}
+
 // this function updates the pixel we shot at 
 function ShotResults(grid: string[][], x: number, y:number, color:string): string [][] {
     const newGrid = grid.map(row => [...row]);
@@ -383,6 +404,7 @@ function Spacecannon() {
         return [{cells: Array.from(terrain), color: '#777777'}];
     })
 
+    
     const cellColors = new Map<number, string>();
     islands.forEach(island => {
         island.cells.forEach(cellIndex => {
@@ -390,6 +412,20 @@ function Spacecannon() {
         });
     });
     
+    const [ufos, setUfos] = useState<{id:number, x:number, y:number}[]>([]);
+    const [ufoIdCounter, setUfoIdCounter] = useState(0);
+    const oceanCells = voronoiData.points.map((_, i) => i).filter(i => !cellColors.has(i));
+
+    const ufoSpawn = () => {
+        if(oceanCells.length == 0) return;
+        const randOcean = oceanCells[Math.floor(Math.random()*oceanCells.length)];
+        const spawnPoint = voronoiData.points[randOcean];
+        const newUfo = {id: ufoIdCounter, x:spawnPoint.x, y:spawnPoint.y};
+
+        setUfos([...ufos, newUfo]);
+        setUfoIdCounter(ufoIdCounter+1);
+    }
+
     const [planetGrid, setPlanetGrid] = useState<string[][]>(() => {
         const seed = Seeder();
         return PlanetGenerator(seed);
@@ -408,7 +444,15 @@ function Spacecannon() {
 
         setPlanetGrid(newGrid);
     }
-    useEffect(() => { 
+    useEffect(() => {
+        const spawnInterval = setInterval(() => {
+            ufoSpawn();
+        }, 2000);
+        return () => clearInterval(spawnInterval);
+    }, []);
+
+    useEffect(() => {
+        
         const handleKeyPress = (e: KeyboardEvent) => {
             if (e.key === ' ') {
                 e.preventDefault();
@@ -447,7 +491,7 @@ function Spacecannon() {
             />
             <div className='spacecannon-map'>
                 <VoronoiRenderer vD={voronoiData} cellColors={cellColors} size={100} mapRef={mapRef} />
-                
+                <UFORenderer ufos={ufos} size={100} />
             </div>
         </div>
         //<PlanetRenderer grid={planetGrid} seed={Seeder()} pixelSize={10} mapRef={mapRef}/>

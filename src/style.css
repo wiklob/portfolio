@@ -1,3 +1,27 @@
+.home-hero-title {
+    color: white;
+    font-family: Inter, sans-serif;
+    font-weight: 500;
+    font-size: 60px;
+    margin-left: 20px;
+    margin-bottom: 40px;
+}
+.home-hero-subtitle {
+    color: white;
+    font-family: Inter, sans-serif;
+    font-weight: 450;
+    font-size: 30px;
+    margin-left: 20px;
+}
+.home-hero-text {
+    color: white;
+    font-family: Inter, sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    margin-left: 20px;
+}
+
+
 .spacecannon-map {
     display: flex;
     justify-content: center;
@@ -92,7 +116,8 @@
 .homehero-left-column {
     flex: 2;
     display: flex;
-    padding: 20px;
+    flex-direction: column;
+    padding: 50px;
 }
 
 .homehero-right-column {
