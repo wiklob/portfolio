@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 
 const EPS = Math.pow(2, -23);
-
+const SIZE = 1000;
+const PROB = 0.85;
+const DECAY = 0.95;
 function useMousePosition() {
     const [position, setPosition] = useState({x: 0, y:0});
 
@@ -33,7 +35,7 @@ function VoronoiRandomPoints( n: number, size: number) { //getting the random po
 
         if(!used.has(id)) {
             used.add(id);
-            points.push({x, y, color: `hsl(${(points.length * 360)/n}, 70%, 60%)`})
+            points.push({x, y, color: `rgba(255,255,255,100)`})
         }
     }
     Offsetter(points);
@@ -232,7 +234,56 @@ function Voronoi(n:number, size:number) {
     return {points, cells};
 }
 
-//function computeAdjacency ()
+function computeAdjacency (cells: ({x:number, y:number}[] | null)[]) {
+    const adjacency: Set<number>[] = cells.map(() => new Set());
+    for( let i=0;i<cells.length;i++) {
+        if(!cells[i]) continue;
+        for( let j=i+1; j<cells.length;j++) {
+            if(!cells[j]) continue;
+            if(cellsShareEdge(cells[i]!, cells[j]!)) {
+                adjacency[i].add(j);
+                adjacency[j].add(i);
+            }
+        }
+    }
+    return adjacency;
+} 
+
+function cellsShareEdge(a:{x:number,y:number}[], b:{x:number, y:number}[]): boolean {
+    let sV=0;
+    for(let i=0;i<a.length;i++) {
+        for(let j=0;j<b.length;j++) {
+            if(samePoint({p1:a[i], p2:b[j]})) {
+                sV++;
+                if(sV>=2) return true;
+            }
+        }
+    }
+    return false;
+}
+
+//beginning the island creation
+function createIsland(start:number, adjacency: Set<number>[], initialProbability: number): Set<number> {
+    const visited = new Set<number>();
+    const terrain = new Set<number>();
+    generateIsland(start, adjacency, visited, terrain, initialProbability);
+    return terrain;
+}
+
+//creating the island
+function generateIsland(index: number, adjacency: Set<number>[], visited: Set<number>, terrain: Set<number>, p: number): void {
+    visited.add(index);
+    terrain.add(index);
+    for(const ind of adjacency[index]) {
+        if(visited.has(ind)) continue;
+        //visited.add(ind);
+        if(Math.random()<p) {
+            const newP=p*DECAY;
+            generateIsland(ind, adjacency, visited, terrain, newP);
+        }
+    }
+}
+
 //old, now we use voronoi
 // this function generates a map based on the seeding data - this is how we keep the state of the map
 function PlanetGenerator(seed: { size: number, color: string}) { 
@@ -241,18 +292,20 @@ function PlanetGenerator(seed: { size: number, color: string}) {
     );
 }
 
-function VoronoiRenderer({vD, size, mapRef}: {vD: {points: {x: number, y: number, color: string}[], cells: ({x:number, y:number}[] | null)[] }, size: number, mapRef: React.RefObject<SVGSVGElement>}) {
+function VoronoiRenderer({vD, cellColors, size, mapRef}: {vD: {points: {x: number, y: number, color: string}[], cells: ({x:number, y:number}[] | null)[] }, cellColors: Map<number, string>, size: number, mapRef: React.RefObject<SVGSVGElement>}) {
     return (
         <svg ref={mapRef} width={size*10} height={size*10}>
             {vD.cells.map((cell, i) => {
                 if (!cell) return null;
                 const conversion = cell.map(vertex => `${vertex.x*10}, ${vertex.y*10}`).join(' ');
+
+                const fillColor = cellColors.get(i) || vD.points[i].color;
                 return < polygon 
-                key={i}
-                points={conversion}
-                fill={vD.points[i].color}
-                stroke="black"
-                strokeWidth={1}
+                    key={i}
+                    points={conversion}
+                    fill={fillColor}
+                    stroke="black"
+                    strokeWidth={1}
                 />
             })}
         </svg>
@@ -319,8 +372,24 @@ function Spacecannon() {
     const mapRef = useRef<SVGSVGElement>(null);
     const [voronoiData, setVoronoiData] = useState(()=> {
         //console.log("Generating new Voronoi");
-        return Voronoi(400, 100);
+        return Voronoi(SIZE, 100);
+        
     });
+    //generating the island for the first time
+    const [islands, setIslands] = useState<{cells: number[], color: string}[]>(() => {
+        const genStart = Math.floor(Math.random()*SIZE); //where to start
+        const adjacency = computeAdjacency(voronoiData.cells); //calc the adj
+        const terrain = createIsland(genStart, adjacency, PROB); //create the terrain
+        return [{cells: Array.from(terrain), color: '#777777'}];
+    })
+
+    const cellColors = new Map<number, string>();
+    islands.forEach(island => {
+        island.cells.forEach(cellIndex => {
+            cellColors.set(cellIndex, island.color);
+        });
+    });
+    
     const [planetGrid, setPlanetGrid] = useState<string[][]>(() => {
         const seed = Seeder();
         return PlanetGenerator(seed);
@@ -377,7 +446,7 @@ function Spacecannon() {
             }}
             />
             <div className='spacecannon-map'>
-                <VoronoiRenderer vD={voronoiData} size={100} mapRef={mapRef} />
+                <VoronoiRenderer vD={voronoiData} cellColors={cellColors} size={100} mapRef={mapRef} />
                 
             </div>
         </div>
