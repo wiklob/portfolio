@@ -63,7 +63,7 @@
     transform: translate(calc(-100% - 25px), 0);
 }
 
-columns {
+.columns {
     display: flex;
     flex-direction: row;
     background-color: transparent;
