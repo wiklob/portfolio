@@ -17,12 +17,13 @@ function useMousePosition() {
     return position;
 }
 //this function has the seeding data for a map; for now contains only two parameters.
+/*
 function Seeder() { 
     const mapSize=100;
     const mapColor='#00ff00';
     const seed = {size: mapSize, color: mapColor};
     return seed;
-}
+}*/
 
 function VoronoiRandomPoints( n: number, size: number) { //getting the random points generated
     const points = [];
@@ -286,11 +287,12 @@ function generateIsland(index: number, adjacency: Set<number>[], visited: Set<nu
 
 //old, now we use voronoi
 // this function generates a map based on the seeding data - this is how we keep the state of the map
+/*
 function PlanetGenerator(seed: { size: number, color: string}) { 
     return Array(seed.size).fill(null).map(() =>
         Array(seed.size).fill(seed.color)
     );
-}
+}*/
 
 function VoronoiRenderer({vD, cellColors, size, mapRef}: {vD: {points: {x: number, y: number, color: string}[], cells: ({x:number, y:number}[] | null)[] }, cellColors: Map<number, string>, size: number, mapRef: React.RefObject<SVGSVGElement>}) {
     return (
@@ -345,10 +347,13 @@ function VoronoiRenderer({vD, cellColors, size, mapRef}: {vD: {points: {x: numbe
     )
 }*/
 
-function UFORenderer({ufos, size}: {ufos: {id: number, x:number, y:number}[], size:number}) {
+function UFORenderer({ufos, mapRef}: {ufos: {id: number, x:number, y:number}[], mapRef: React.RefObject<SVGSVGElement>}) {
+    const map = mapRef.current;
+    if (!map) return null;
+    const rect = map.getBoundingClientRect();
     return (
         <svg 
-        style={{position:'absolute', top: 0, left:0, pointerEvents:'none'}} width='100%' height='100%' viewBox={`0 0 ${size*10} ${size*10}`}
+        style={{position:'absolute', top: rect.top, left:rect.left, pointerEvents:'none'}} width={rect.width} height={rect.height}
         >
             {ufos.map(ufo => (
                 <ellipse 
@@ -366,7 +371,70 @@ function UFORenderer({ufos, size}: {ufos: {id: number, x:number, y:number}[], si
     )
 }
 
-// this function updates the pixel we shot at 
+function UFODeadRenderer({deadUfos, mapRef}: {deadUfos: {id: number, x:number, y:number}[], mapRef: React.RefObject<SVGSVGElement>}) {
+    const map = mapRef.current;
+    if (!map) return null;
+    const rect = map.getBoundingClientRect();
+    return (
+        <svg 
+        style={{position:'absolute', top: rect.top, left:rect.left, pointerEvents:'none'}} width={rect.width} height={rect.height}
+        >
+            {deadUfos.map(deadUfo => (
+                <ellipse 
+                    key={deadUfo.id}
+                    cx={deadUfo.x*10} 
+                    cy={deadUfo.y*10}
+                    rx={25}//radii x
+                    ry={8}//radii y
+                    fill="black"
+                    stroke="darkened"
+                    strokeWidth={1}
+                />
+            ))}
+        </svg>
+    )
+}
+
+function HoleRenderer({holes, mapRef}: {holes: {id: number, x:number, y:number}[], mapRef: React.RefObject<SVGSVGElement>}) {
+    const map = mapRef.current;
+    if (!map) return null;
+    const rect = map.getBoundingClientRect();
+    return (
+        <svg 
+        style={{position:'absolute', top: rect.top, left:rect.left, pointerEvents:'none'}} width={rect.width} height={rect.height}
+        >
+            {holes.map(hole => (
+                <g key={hole.id}>
+                <ellipse 
+                    cx={hole.x} 
+                    cy={hole.y}
+                    rx={17}//radii x
+                    ry={17}//radii y
+                    fill="grey"
+                    stroke="darkened"
+                    strokeWidth={1}
+                />
+                <ellipse 
+                    cx={hole.x} 
+                    cy={hole.y}
+                    rx={8}//radii x
+                    ry={8}//radii y
+                    fill="orange"
+                />
+                <ellipse 
+                    cx={hole.x} 
+                    cy={hole.y}
+                    rx={4}//radii x
+                    ry={4}//radii y
+                    fill="yellow"
+                />
+                </g>
+            ))}
+        </svg>
+    )
+}
+// this function updates the pixel we shot at
+/* 
 function ShotResults(grid: string[][], x: number, y:number, color:string): string [][] {
     const newGrid = grid.map(row => [...row]);
     if (y >= 0 && y < grid.length && x >= 0 && x < grid[0].length) {
@@ -385,7 +453,7 @@ function ShotResults(grid: string[][], x: number, y:number, color:string): strin
         }
     }
     return newGrid;
-}
+}*/
 
 // this is the main function that serves both the aiming system and the shooting.
 function Spacecannon() {
@@ -404,7 +472,6 @@ function Spacecannon() {
         return [{cells: Array.from(terrain), color: '#777777'}];
     })
 
-
     const cellColors = new Map<number, string>();
     islands.forEach(island => {
         island.cells.forEach(cellIndex => {
@@ -413,9 +480,14 @@ function Spacecannon() {
     });
     
     const [ufos, setUfos] = useState<{id:number, x:number, y:number}[]>([]);
+    const [deadUfos, setDeadUfos] = useState<{id:number, x:number, y:number}[]>([]);
+    const [holes, setHoles] = useState<{id:number, x:number, y:number}[]>([]);
     const [ufoIdCounter, setUfoIdCounter] = useState(0);
+    const [deadUfoIdCounter, setDeadUfoIdCounter] = useState(0);
+    const [holeCounter, setHoleCounter] = useState(0);
     const oceanCells = voronoiData.points.map((_, i) => i).filter(i => !cellColors.has(i));
 
+    //this makes the ufos appear
     const ufoSpawn = () => {
         if(oceanCells.length == 0) return;
         const randOcean = oceanCells[Math.floor(Math.random()*oceanCells.length)];
@@ -425,12 +497,82 @@ function Spacecannon() {
         setUfos([...ufos, newUfo]);
         setUfoIdCounter(ufoIdCounter+1);
     }
+    //make the dead ufo appear
+    const ufoDeadSpawn = (x: number, y:number) => {
+        const newDeadUfo = {id: deadUfoIdCounter, x: x, y: y};
+        setDeadUfos([...deadUfos, newDeadUfo]);
+        setDeadUfoIdCounter(deadUfoIdCounter+1);
+    }
+    //disappear the existing ufo
+    const ufoShot = (targetId:number) => {
+        setUfos(ufos.filter(ufo => ufo.id !== targetId));
+    }
+    const holeSpawn = (x:number, y:number) => {
+        const newHole = {id: holeCounter, x:x, y:y}
+        setHoles([...holes, newHole]);
+        setHoleCounter(holeCounter+1);
+    }
+    //function going on and on and spawning ufos
+    useEffect(() => {
+        const spawnInterval = setInterval(() => {
+            if(ufos.length<10) {
+                ufoSpawn();
+            }
+        }, 2000);
+        return () => clearInterval(spawnInterval);
+    }, [ufos]); //passing the ufos array so that we add new ufos instead of resetting it
 
+    const newShooting = () => {
+        const map = mapRef.current;
+        if(!map) return; 
+        const ref = map.getBoundingClientRect();
+        const relX = position.x - ref.left;
+        const relY = position.y - ref.top;
+        ufos.forEach(ufo => {
+            if(Math.abs(relX-ufo.x*10)<30 && Math.abs(relY-ufo.y*10)<20) {
+                ufoDeadSpawn(ufo.x, ufo.y);
+                ufoShot(ufo.id);
+            }
+            
+        })
+        holeSpawn(relX, relY);
+    }
+    useEffect(() => {
+        const handleKeyPress = (e:KeyboardEvent) => {
+            if(e.key == ' ') {
+                e.preventDefault();
+                newShooting();
+            }
+        }
+        window.addEventListener('keydown', handleKeyPress);
+        return () => window.removeEventListener('keydown', handleKeyPress);
+    },[position]);
+    /*
+    useEffect(() => {
+        const handleKeyPress = (e: KeyboardEvent) => {
+            if (e.key === ' ') {
+                e.preventDefault();
+                Shooting();
+            }
+        }
+        window.addEventListener('keydown', handleKeyPress);
+        return () => window.removeEventListener('keydown', handleKeyPress);
+    }, [position, planetGrid]);
+    */
+    /*
+    useEffect(() => {
+        const handleKeyPress = (e: KeyboardEvent) => {
+            if (e.key == )
+        }
+    })
+    */
+
+    /*
     const [planetGrid, setPlanetGrid] = useState<string[][]>(() => {
         const seed = Seeder();
         return PlanetGenerator(seed);
-    });
-
+    });*/
+    /*
     const shooting = () => {
         const map = mapRef.current;
         if (!map) return;
@@ -443,25 +585,9 @@ function Spacecannon() {
         const newGrid = ShotResults(planetGrid, gX, gY, "#ff0000");
 
         setPlanetGrid(newGrid);
-    }
-    useEffect(() => {
-        const spawnInterval = setInterval(() => {
-            ufoSpawn();
-        }, 2000);
-        return () => clearInterval(spawnInterval);
-    }, []);
-
-    useEffect(() => {
-        
-        const handleKeyPress = (e: KeyboardEvent) => {
-            if (e.key === ' ') {
-                e.preventDefault();
-                shooting();
-            }
-        }
-        window.addEventListener('keydown', handleKeyPress);
-        return () => window.removeEventListener('keydown', handleKeyPress);
-    }, [position, planetGrid]);
+    }*/
+    
+    //spawning ufos every two sections
     return (
         <div>
             <div className="spacecannon-aim" style={{
@@ -491,7 +617,10 @@ function Spacecannon() {
             />
             <div className='spacecannon-map'>
                 <VoronoiRenderer vD={voronoiData} cellColors={cellColors} size={100} mapRef={mapRef} />
-                <UFORenderer ufos={ufos} size={100} />
+                <HoleRenderer holes={holes} mapRef={mapRef}/>
+                <UFORenderer ufos={ufos} mapRef={mapRef}/>
+                <UFODeadRenderer deadUfos={deadUfos} mapRef={mapRef}/>
+                
             </div>
         </div>
         //<PlanetRenderer grid={planetGrid} seed={Seeder()} pixelSize={10} mapRef={mapRef}/>

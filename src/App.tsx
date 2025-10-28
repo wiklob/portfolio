@@ -18,10 +18,7 @@ function App() {
           <Route path="/spacecannon" element={<Spacecannon/ >} />
         </Routes>
       </BrowserRouter>
-      
     )
-    
-    
   }
 
   export default App
