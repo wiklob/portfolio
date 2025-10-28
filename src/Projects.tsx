@@ -2,25 +2,29 @@ function Projects() {
     return (
         <div className="projects"> 
             <div className="project-icon-row">
-                <img className="project-image-img" src="/networker_icon.png" alt="Signature"/>
-                <img className="project-image-img" src="/lockin_icon.png" alt="Signature"/>
-                <img className="project-image-img" src="/u_icon.png" alt="Signature"/>
+                <a href="https://thenetworker.agency" target="_blank" rel="noopener noreferrer">
+                <img className="project-image-img" src="/networker_icon.png" alt="Signature"/></a>
+                <a href="https://lockinstudy.com" target="_blank" rel="noopener noreferrer">
+                <img className="project-image-img" src="/lockin_icon.png" alt="Signature"/></a>
+                <a href="https://uth.academy" target="_blank" rel="noopener noreferrer">
+                <img className="project-image-img" src="/u_icon.png" alt="Signature"/></a>
             </div>
             <div className="projects-contents">
                 <div className="project-banner">
                     <div className="project-banner-image"> 
-                        <img className="project-banner-image-img" src="/networker_icon.png" alt="Signature"/>
+                        <a href="https://thenetworker.agency" target="_blank" rel="noopener noreferrer">
+                        <img className="project-banner-image-img" src="/networker_icon.png" alt="Signature"/></a>
                     </div>
                     <div className="project-banner-description"> 
                         <div className="project-banner-description-title">
-                            <a className="link-styling-remove" href="https://lockinstudy.com" target="_blank" rel="noopener noreferer"> Networker </a>
+                            <a className="link-styling-remove" href="https://thenetworker.agency" target="_blank" rel="noopener noreferrer"> Networker </a>
                         </div>
                         <div className="project-banner-description-subtitle">
                             Professional Event Aggregator Browser
                         </div>
                         <div className="project-banner-description-tag-list">
                             <div className="project-banner-description-tag">
-                                <a className="link-styling-remove" href="https://thenetworker.agency" target="_blank" rel="noopener noreferer"> thenetworker.agency </a>
+                                <a className="link-styling-remove" href="https://thenetworker.agency" target="_blank" rel="noopener noreferrer"> thenetworker.agency </a>
                             </div>
                             <div className="project-banner-description-tag-grey">
                                 Pre-launch
@@ -53,11 +57,12 @@ function Projects() {
                 
                 <div className="project-banner">
                     <div className="project-banner-image"> 
-                        <img className="project-banner-image-img" src="/u_icon.png" alt="Signature"/>
+                        <a href="https://uth.academy" target="_blank" rel="noopener noreferrer">
+                        <img className="project-banner-image-img" src="/u_icon.png" alt="Signature"/></a>
                     </div>
                     <div className="project-banner-description"> 
                         <div className="project-banner-description-title">
-                            <a className="link-styling-remove" href="https://uth.academy" target="_blank" rel="noopener noreferer"> u </a>
+                            <a className="link-styling-remove" href="https://uth.academy" target="_blank" rel="noopener noreferrer"> u </a>
                         </div>
                         <div className="project-banner-description-subtitle">
                             The modern personal tutoring platform
@@ -96,18 +101,19 @@ function Projects() {
                 </div> 
                 <div className="project-banner">
                     <div className="project-banner-image"> 
-                        <img className="project-banner-image-img" src="/lockin_icon.png" alt="Signature"/>
+                        <a href="https://lockinstudy.com" target="_blank" rel="noopener noreferrer">
+                        <img className="project-banner-image-img" src="/lockin_icon.png" alt="Signature"/></a>
                     </div>
                     <div className="project-banner-description"> 
                         <div className="project-banner-description-title">
-                            <a className="link-styling-remove" href="https://lockinstudy.com" target="_blank" rel="noopener noreferer"> Lockin </a>
+                            <a className="link-styling-remove" href="https://lockinstudy.com" target="_blank" rel="noopener noreferrer"> Lockin </a>
                         </div>
                         <div className="project-banner-description-subtitle">
                             Comprehensive AI-powered studying platform
                         </div>
                         <div className="project-banner-description-tag-list">
                             <div className="project-banner-description-tag">
-                                <a className="link-styling-remove" href="https://lockinstudy.com" target="_blank" rel="noopener noreferer"> lockinstudy.com </a>
+                                <a className="link-styling-remove" href="https://lockinstudy.com" target="_blank" rel="noopener noreferrer"> lockinstudy.com </a>
                             </div>
                             <div className="project-banner-description-tag-blue">
                                 launching soon

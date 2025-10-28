@@ -350,10 +350,10 @@ function VoronoiRenderer({vD, cellColors, size, mapRef}: {vD: {points: {x: numbe
 function UFORenderer({ufos, mapRef}: {ufos: {id: number, x:number, y:number}[], mapRef: React.RefObject<SVGSVGElement>}) {
     const map = mapRef.current;
     if (!map) return null;
-    const rect = map.getBoundingClientRect();
+    //const rect = map.getBoundingClientRect();
     return (
         <svg 
-        style={{position:'absolute', top: rect.top, left:rect.left, pointerEvents:'none'}} width={rect.width} height={rect.height}
+        style={{position:'absolute', top: 0, left:0, pointerEvents:'none'}} width="100%" height="100%"
         >
             {ufos.map(ufo => (
                 <ellipse 
@@ -374,10 +374,10 @@ function UFORenderer({ufos, mapRef}: {ufos: {id: number, x:number, y:number}[], 
 function UFODeadRenderer({deadUfos, mapRef}: {deadUfos: {id: number, x:number, y:number}[], mapRef: React.RefObject<SVGSVGElement>}) {
     const map = mapRef.current;
     if (!map) return null;
-    const rect = map.getBoundingClientRect();
+    //const rect = map.getBoundingClientRect();
     return (
         <svg 
-        style={{position:'absolute', top: rect.top, left:rect.left, pointerEvents:'none'}} width={rect.width} height={rect.height}
+        style={{position:'absolute', top: 0, left:0, pointerEvents:'none'}} width="100%" height="100%"
         >
             {deadUfos.map(deadUfo => (
                 <ellipse 
@@ -398,13 +398,14 @@ function UFODeadRenderer({deadUfos, mapRef}: {deadUfos: {id: number, x:number, y
 function HoleRenderer({holes, mapRef}: {holes: {id: number, x:number, y:number}[], mapRef: React.RefObject<SVGSVGElement>}) {
     const map = mapRef.current;
     if (!map) return null;
-    const rect = map.getBoundingClientRect();
+    //const rect = map.getBoundingClientRect();
     return (
         <svg 
-        style={{position:'absolute', top: rect.top, left:rect.left, pointerEvents:'none'}} width={rect.width} height={rect.height}
+        style={{position:'absolute', top: 0, left:0, pointerEvents:'none'}} width="100%" height="100%"
         >
             {holes.map(hole => (
                 <g key={hole.id}>
+                
                 <ellipse 
                     cx={hole.x} 
                     cy={hole.y}
@@ -427,6 +428,13 @@ function HoleRenderer({holes, mapRef}: {holes: {id: number, x:number, y:number}[
                     rx={4}//radii x
                     ry={4}//radii y
                     fill="yellow"
+                />
+                <image
+                    href={`/boom.gif?t=${hole.id}`}
+                    x={hole.x - 50}  /* center it, adjust based on GIF size */
+                    y={hole.y - 100}
+                    width="100"
+                    height="100"
                 />
                 </g>
             ))}
@@ -590,12 +598,20 @@ function Spacecannon() {
     //spawning ufos every two sections
     return (
         <div>
+            <div className="informative">
+                press space to shoot
+            </div>
             <div className="spacecannon-aim" style={{
             left: position.x,
             top: position.y
             }}
             />
             <div className="spacecannon-aim-north" style={{
+            left: position.x,
+            top: position.y
+            }}
+            />
+            <div className="spacecannon-aim-west" style={{
             left: position.x,
             top: position.y
             }}
@@ -610,17 +626,14 @@ function Spacecannon() {
             top: position.y
             }}
             />
-            <div className="spacecannon-aim-west" style={{
-            left: position.x,
-            top: position.y
-            }}
-            />
-            <div className='spacecannon-map'>
-                <VoronoiRenderer vD={voronoiData} cellColors={cellColors} size={100} mapRef={mapRef} />
-                <HoleRenderer holes={holes} mapRef={mapRef}/>
-                <UFORenderer ufos={ufos} mapRef={mapRef}/>
-                <UFODeadRenderer deadUfos={deadUfos} mapRef={mapRef}/>
-                
+            
+            <div className='spacecannon-map-wrapper'>
+                <div className='spacecannon-map' style={{position: 'relative'}}>
+                    <VoronoiRenderer vD={voronoiData} cellColors={cellColors} size={100} mapRef={mapRef} />
+                    <HoleRenderer holes={holes} mapRef={mapRef}/>
+                    <UFORenderer ufos={ufos} mapRef={mapRef}/>
+                    <UFODeadRenderer deadUfos={deadUfos} mapRef={mapRef}/>
+                </div>
             </div>
         </div>
         //<PlanetRenderer grid={planetGrid} seed={Seeder()} pixelSize={10} mapRef={mapRef}/>
