@@ -127,6 +127,15 @@ function Projects() {
                         </div>
                     </div>
                 </div>
+                <div className="screenshots"> 
+                    <img className="screenshot-img" src="/screenshot1.png" alt="Signature"/>
+                    <div className="screenshots-row">
+                        <img className="screenshot-img-2" src="/screenshot2.png" alt="Signature"/>
+                        <img className="screenshot-img-2" src="/screenshot3.png" alt="Signature"/>
+                        <img className="screenshot-img-2" src="/screenshot4.png" alt="Signature"/>
+                    </div>
+                </div>
+                
             </div>
         </div>
     )
