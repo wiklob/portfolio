@@ -3,10 +3,34 @@
     text-decoration: none;
     cursor: pointer;
 }
-.projects {
+
+.projects-intro {
     padding: 0 50px;
     display: flex;
     flex-direction: column;
+}
+
+.projects {
+    padding: 0 50px;
+    display: flex;
+    flex-direction: column;    
+}
+
+.project-icon-row {
+    display: flex;
+    flex-direction: row;
+    max-height: 70px;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.project-image-img {
+    max-width: 70px;
+    height: auto;
+    aspect-ratio: 1/1;
+    object-fit: contain;
 }
 
 .project-banner-image {
