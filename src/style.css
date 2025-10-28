@@ -13,7 +13,9 @@
 .projects {
     padding: 0 50px;
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .project-icon-row {
@@ -54,13 +56,13 @@
 .project-banner-description-title {
     font-family: inter, sans-serif;
     font-weight: 700;
-    font-size: clamp(18px, 4vw, 45px);
+    font-size: clamp(18px, 4vw, 38px);
 }
 
 .project-banner-description-subtitle{
     font-family: inter, sans-serif;
     font-weight: 450;
-    font-size: clamp(14px, 3.5vw, 30px);
+    font-size: clamp(14px, 3.5vw, 27px);
     color: grey;
     margin-bottom: 10px;
 }
