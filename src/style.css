@@ -1,3 +1,43 @@
+.blog {
+    padding: 0 50px;
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.blog-post {
+    padding: 20px;
+    border-width: 0 0 2px 0;
+    border-style: solid;
+    border-color: rgba(77,77,77, 0.4);
+}
+.blog-post-date {
+    font-family: inter, sans-serif;
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-size: clamp(12px, 2.5vw, 20px);
+}
+.blog-post-title {
+    font-family: inter, sans-serif;
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: clamp(18px, 4vw, 38px);
+}
+.blog-post-subtitle{
+    font-family: inter, sans-serif;
+    font-weight: 450;
+    font-size: clamp(14px, 3.5vw, 27px);
+    margin-bottom: 35px;
+    color: grey;
+}
+.blog-post-text {
+    font-family: inter, sans-serif;
+    font-weight: 300;
+    font-size: clamp(12px, 2.5vw, 20px);
+    line-height: 1.5;
+}
+
+
 .link-styling-remove {
     color: inherit;
     text-decoration: none;
@@ -24,8 +64,11 @@
     max-height: 70px;
     gap: 30px;
     justify-content: center;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
     margin-top: 20px;
+    border-width: 0 0 2px 0;
+    border-style: solid;
+    border-color: rgba(77,77,77, 0.4);
 }
 
 .project-image-img {
@@ -74,6 +117,20 @@
 
 .project-banner-description-tag {
     font-family: Inter, sans-serif;
+    color: black;
+    border-radius: 30px;
+    font-weight: 450;
+    font-size: 12px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    width: fit-content;
+    padding: 5px 12px;
+    margin-bottom: 15px;
+}
+
+.project-banner-description-tag-grey{
+    font-family: Inter, sans-serif;
     color: white;
     border-radius: 30px;
     font-weight: 450;
@@ -82,18 +139,8 @@
     width: fit-content;
     padding: 5px 12px;
     margin-bottom: 15px;
-}
-
-.project-banner-description-tag-orange{
-    font-family: Inter, sans-serif;
-    color: white;
-    border-radius: 30px;
-    font-weight: 450;
-    font-size: 12px;
-    background-color: orange;
-    width: fit-content;
-    padding: 5px 12px;
-    margin-bottom: 15px;
+    border-width: 2px;
+    border-style: solid;
 }
 
 .project-banner-description-tag-blue{
@@ -106,6 +153,22 @@
     width: fit-content;
     padding: 5px 12px;
     margin-bottom: 15px;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.project-banner-description-tag-light-green{
+    font-family: Inter, sans-serif;
+    color: white;
+    border-radius: 30px;
+    font-weight: 450;
+    font-size: 12px;
+    background-color: rgb(10, 207, 10);
+    width: fit-content;
+    padding: 5px 12px;
+    margin-bottom: 15px;
+    border-width: 2px;
+    border-style: solid;
 }
 
 .project-banner-description-text {
@@ -115,6 +178,22 @@
     line-height: 1.5;
 }
 
+.project-banner-description-oneliners {
+    margin: 10px 0 0 0; 
+}
+.project-banner-description-oneliner {
+    font-family: inter, sans-serif;
+    font-weight: 300;
+    font-size: clamp(10px, 2vw, 18px);
+    line-height: 1.5;
+}
+
+.project-banner-description-oneliners-title {
+    font-family: inter, sans-serif;
+    font-weight: 550;
+    font-size: clamp(14px, 3.5vw, 27px);
+    margin-bottom: 3px;
+}
 .project-banner {
     padding: 20px;
     display: flex;
@@ -123,7 +202,6 @@
     border-width: 0 0 2px 0;
     border-style: solid;
     border-color: rgba(77,77,77, 0.4);
-    
 }
 
 
