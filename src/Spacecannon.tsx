@@ -494,22 +494,22 @@ function Spacecannon() {
         const spawnPoint = voronoiData.points[randOcean];
         const newUfo = {id: ufoIdCounter, x:spawnPoint.x, y:spawnPoint.y};
 
-        setUfos([...ufos, newUfo]);
+        setUfos(prevUfos => [...prevUfos, newUfo]);
         setUfoIdCounter(ufoIdCounter+1);
     }
     //make the dead ufo appear
     const ufoDeadSpawn = (x: number, y:number) => {
         const newDeadUfo = {id: deadUfoIdCounter, x: x, y: y};
-        setDeadUfos([...deadUfos, newDeadUfo]);
+        setDeadUfos(prevDeadUfos => [...prevDeadUfos, newDeadUfo]);
         setDeadUfoIdCounter(deadUfoIdCounter+1);
     }
     //disappear the existing ufo
     const ufoShot = (targetId:number) => {
-        setUfos(ufos.filter(ufo => ufo.id !== targetId));
+        setUfos(prevUfos => prevUfos.filter(ufo => ufo.id !== targetId));
     }
     const holeSpawn = (x:number, y:number) => {
         const newHole = {id: holeCounter, x:x, y:y}
-        setHoles([...holes, newHole]);
+        setHoles(prevHoles => [...prevHoles, newHole]);
         setHoleCounter(holeCounter+1);
     }
     //function going on and on and spawning ufos
