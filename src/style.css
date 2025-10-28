@@ -1,3 +1,58 @@
+.projects {
+    padding: 50px;
+}
+
+.project-banner-image {
+    display: flex;
+    flex: 1;
+    max-height: 33vw;
+    aspect-ratio: 1/1;
+}
+.project-banner-image-img {
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.project-banner-description {
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+    margin-left: 60px;
+}
+.project-banner-description-title {
+    font-family: inter, sans-serif;
+    font-weight:800;
+    font-size: clamp(24px, 4vw, 60px);
+}
+
+.project-banner-description-subtitle{
+    font-family: inter, sans-serif;
+    font-weight:450;
+    font-size: clamp(20px, 4vw, 30px);
+    color: grey;
+    margin-bottom: 20px;
+}
+
+
+.project-banner-description-text {
+    font-family: inter, sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.project-banner {
+    padding: 20px;
+    display: flex;
+
+    flex-direction: row;
+    border-width: 0 0 2px 0;
+    border-style: solid;
+    border-color: rgba(77,77,77, 0.4);
+    
+}
+
+
 .home-hero-title {
     color: white;
     font-family: Inter, sans-serif;
