@@ -15,7 +15,11 @@ function HomeHero () {
                         <div className="homehero-my-bio-title">
                             Wiktor Łoboda
                         </div>
+                        <div className="homehero-my-bio-text">
+                            abc iq3n4itrnq3iurtn13iu4tiu2rniunriunkdjsfnjksnfkjsndfkjdsnfkjsndkjfnkj
+                        </div>
                     </div>
+                    
                 </div>
             </div>
         </div>            
