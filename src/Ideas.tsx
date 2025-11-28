@@ -11,6 +11,8 @@ interface Idea {
 type ContentBlock =
   | { type: 'text'; value: string }
   | { type: 'image'; filename: string; caption?: string }
+  | { type: 'header'; value: string }
+  | { type: 'subheader'; value: string }
 
 function parseIdea(filename: string, raw: string): Idea {
   const lines = raw.split('\n')
@@ -60,6 +62,20 @@ function parseIdea(filename: string, raw: string): Idea {
         filename: imageMatch[1],
         caption: imageMatch[3] || undefined
       })
+    } else if (trimmed.startsWith('>>')) {
+      // Subheader
+      if (currentText.trim()) {
+        content.push({ type: 'text', value: currentText.trim() })
+        currentText = ''
+      }
+      content.push({ type: 'subheader', value: trimmed.slice(2).trim() })
+    } else if (trimmed.startsWith('>')) {
+      // Header
+      if (currentText.trim()) {
+        content.push({ type: 'text', value: currentText.trim() })
+        currentText = ''
+      }
+      content.push({ type: 'header', value: trimmed.slice(1).trim() })
     } else {
       currentText += line + '\n'
     }
@@ -120,6 +136,10 @@ function IdeaItem({ idea }: { idea: Idea }) {
                   ))}
                 </div>
               )
+            } else if (block.type === 'header') {
+              return <h3 key={i} className="idea-section-header">{block.value}</h3>
+            } else if (block.type === 'subheader') {
+              return <h4 key={i} className="idea-section-subheader">{block.value}</h4>
             } else {
               return (
                 <div key={i} className="idea-image-block">

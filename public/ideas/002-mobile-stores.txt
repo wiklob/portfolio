@@ -1,9 +1,98 @@
 ---
 title: Mobile Stores
-date: 2024-09-15
+date: 2024-09
 tags: consumer, franchise
 ---
 
-the core idea is easy
+>Short summary:
+>>One liner
+A business model built around "Mobile Stores" - a fleet of vans, that serves as popup stores for established brands.
+>>Example
+A large, established clothing brand that has no physical stores wants to diversify its sales offering - rents a van, and pops up in different cities. Increases brand visibility and presence (outbound) and enhances engagement of the fanbase (inbound).
+>>Why works
+A validated social construct of walking to a specific Point of Interest ("Paczkomaty"/"Parcel Boxes" also originate in Poland!). Avoids A LOT of costs and problems of a physical, stationary store.
+>>Bet
+Counter-revolution to progressively digitalising manner of shopping; physical purchase over digital discovery.
+>>Current stage
+Idea, not touched for 10 months now. Requires large financial resources... and generally, is a very courageous bet. Being validated by social behviour also means dependability of it. If people just don't feel it, it fails. Utterly.
 
-the not-so-core-idea is harder.
+>What I learned
+>>Commit to projects, that you believe you *can* do.
+I have abandoned this project, because when I came up with it, I wasn't half of the person I needed to be to succeed. Of course, it will always seem like so, you always feel not-smart-enough... I'm a fan of sickeningly high ambitions and drive, but some fair assessment of one's managerial capabilities is also in order.
+>>Sharing ideas publicly is a *generally* good idea.
+If you share an idea in public, you signify already working on it for quite a while; whatever may one's gainbe from copying you, they don't have the context of your reasoning. And even if you publish it... there is always a question, whether such wannabe-competitor is better with you, or without you. If he believes the former to be true, he will reach out; if the latter, he will compete with you. And the market will decide who was right. On the other hand, probably a hundred other people had the same idea as you do - and if you are not willing to work on a project immediately, there is no wrong in just sharing it (you become a net-giver, not a net-taker). To summarise: unless you are working on an idea intensively, and believe that you do not need any help (probably wrong!), then you can benefit more from sharing than not shering (anything>nothing).
+>>If you are The One to do it, the competition doesn't matter.
+Don't hesitate with sharing the idea with anyone - many people will advise you in ways you never expected them to, directly or not. And, what I want to emphasize: if you went to some big guy with your idea - older, smarter, wealthier - and said everything about it... with great probablity, nothing will happen. He probably has better ideas himself anyways, and he can profit more from helping you than from stealing the idea. Really. Ideas are not that precious after all.
+>>Good ideas are rooted in social macro-behaviour, and already worked in the past. 
+It is a very personal view, closely tied to my creative taste; I believe, that the best ideas have once been validated by the society, but some economical changes made them seem obsolete, and those solutions disappeared. If you manage to find them, and reinvigorate them - just as Rafał Brzoska with Parcel Boxes and inPost - you can aim for very large, society-based projects, that will *probably* work again.
+
+>Backstory
+
+Poland, 2010 - I only recently learned to speak, and winters are still cold and snowy. As we near Christmas, we embark on a hour-long drive out of my hometown, to our countryside home; after all, there is nothing cooler than chasing down Santa through your own garden, however improbable was succeeding in it for a four-year-old. While we have prepared and brought most of our Christmas Table food with us, we needed to get fresh bread and preferred to source *kiełbasa* (sausage) locally. But how to get those products in -20 degrees Celcius, with the communal village shop closed down for winter?
+
+The (rural) district's council had a solution for that: twice a week, a "Sklep obwoźny" ("Mobile Store") came over: a small van with groceries and other necessities. After making its way into a comfortable place somewhere in the middle of the village, it expected customers to come over by themselves, and buy what they need - and so everyone did, me and my family included. Fortunately or not, this practice has been abandoned (in my area at least) around 2012, as the communal shop has transformed into a private-ran business, suddenly affordable also during winter-time (capitalism ig). Twelve years have passed, until I recalled this particular concept from my childhood... and in the meantime Poland changed so much, that in my belief we made a full circle: once again in need of experiencing stuff personally. And Mobile Stores *may* be one of the answers.
+
+>Reference
+
+Despite starting the text with the concept's backstory, I started my reasoning from a very different standpoint, and came across this similarity only by mistake. Namely: after approaching a few of very cool ideas that felt unachievable for that old me (I know no such concept anymore), I wanted to go with something simple to the core, so I can actually get it done - and I settled for a simple t-shirt store. Knowing my unwillingness to start a business without any innovation, one can rightly presume my focus: coming up with something, anything, that will make a boring business sexy. 
+
+The following parts of the business have been named: merchandise, sales, advertisement, management - and each of those has received some twist over the early period of conceptualising.
+
+>>Merchandise
+Differenciation is the core tool of coolness, and goodness (social reflection) is not only the core evaluator of long-time sustainability, but happens to serve as great marketing, if spinned properly. Therefore, our merchandise has acquired few priorities: 
+a) substantial portion of revenue should go towards charitable causes, so that helping can become both a motivation and a benefit (imagine a scarf with LV monograms, but printing each monogram is $10 towards animal protection). 
+b) the whole chain should be under control of the company - from sustainable material sourcing and production up to Rimowa-like warranty policies
+c) given there is more way too many t-shirts produced already, the brand may literally become its logo, nothing else: aside from buying a t-shirt, you can bring over your own t-shirt, and LITERALLY pay for the logo - stamped or printed in the store, just aside you. Imagine the rich people coming over with their designer brands, so that they can get a charity stamp for us.
+d) we basically play 'sustainability' card better than anyone else. Production down, waste down (and properly utilised), helping up.
+The final argument for this concept is supported by GreenPeace or WWF - they are asking for money, and giving nothing in return, because "helping should be voluntary". Bullshit. Images with dying animals or sticking to the road is just gross and annoying. Helping should be cool and become a symbol of status, or as one would say nowadays: Make Helping Great Again.
+
+>>Advertisement
+Despite its beautiful bloom, Poland and its big cities remain utterly gray. Obviously, each city is WAY brighter, "western" one would say, than 20 years ago - but still, the cityscape remains dull. Or rather: when you go to the street, there is very few *weird* things you encounter. On the other hand, Poland remains a walkable (or even highly-walked) country. This, in my opinion, creates a re-opening for physical marketing, of all manners.
+a) Conventional on-street marketing: Posters, Murals, Announcements. Poles are susceptible to beauty, and would appreciate marketing conducted with presumption different than "customers are idiots, we must yell about promotions very loud".
+b) Live Marketing - f.e. hiring actors posing as models, who walk around the city in your collection - and a group of fake paparazzi around them. Simply dragging attention by being weird, unusual. Already spotted by me during a promotional campaign for Squid Game, seemed popular. All actions and performances *inside* a city, that gain you visibility through weirdness. Way too rarely exploited.
+c) Static Physical Marketing, "the Fortnite Llama strategy" - on the occasion of some huge event in the computer game of Fortnite, its creator, Epic Games, decided to run the following campaign: in random places around the world, they place 10-meter-high comic-style metal llamas, and give no explanation whatsoever about what they are. Contrary to a popular polish saying: in a consumerist world, where everything is usually explained in a way, that presumes the spectator as quite stupid, showcasing stuff with no obvious answer is enough to make its way to local community forums, or 'spotted' insta pages. And so it did. One can therefore recreate this strategy with anything - just placing random stuff around the city, and waiting for people to ask questions about it. If one figures out how to deliver the answer (QR code? Popular-enough but cryptic social media page? YT news channels/interviews? Puzzle incorporated into the design?) - or just has a sufficient base of knowledgeable-enough users such as Fortnite - he gets a very very cool marketing platform.
+
+>>Management & Sales
+With the core idea, both those categories were quite straight forward - if not for them, the company would aim to become a "redbull/cocacola" marketing first-company. That being said, those fields also deserved some innovation - and one of them turned out to be a better idea than the whole rest of the project. 
+>>Observations: what does not work now
+The following factors contributed to the solution in the form of a Mobile Store:
+- The physical locations of stores, in Polish "Sklepy Stacjonarne" ("Stationary Stores"), reflect the core of their nature: positioned always in the same place; effectively, they require high cost of settling down, and little flexibility in said mobility: they are either opened up or closed down. Each relocation is insanely costly.
+- 99% of the stores are renting the store space - and there is no ownership earned over the store location itself. Furthermore, there is little flexibility regarding consumer sentiment changes: its a fixed rate each month, regardless of how many customers you have. And this is the best-case scenario, that doesn't account for sudden rent increases. 
+- Physical positioning is a crucial factor for all unintentional customers (by-passers). Effectively, badly-located store gets very few guests outside of *intentional customers*, and well-located stores are often SUPER pricy to rent (mind additional issues stemming from the previous bullet).
+>>Solutions: benefits of how could it work differently
+Effectively, as the described state of the market feels very uncomfortable, I came up with something opposite to Stationary Stores - Mobile Stores. As mentioned in the introduction, they would come as a fleet of delivery vans (optionally modified), and posess all features of a food-truck:
+- Food truck gets where it wants. A music festival in a town aside the sea (that has 5000 residents outside of the season and permanent presence makes no sense)? A visit in the east-most region, where customers don't know your brand yet? Or a conference in the opposite corner of the country? Yeah. All covered.
+- Compared to a conventional store, costs are super low - existing warehouses serve as homebases, and a van is way cheaper than a physical store. (A lot about this point depends on the business model, about them in a second)
+- Mobility enables... everything. Going out with tours like musicians? Popup stores around different cities? I could come up with 100 different marketing spins to utilise it, whether it would be playing with scarcity, arriving on demand... anything.
+- The mobile store also becomes a core marketing asset by itself, whether driving around the city, or positioned in a specific location.
+>>Potential problems and solutions:
+- too little merchandise - refill in a warehouse
+- where to park - food-truck areas, markets, parkings, plazas. The closer to by-passers, the better.
+- how to buy? - core of the merchandise displayed on a rack; all other activities (such as brand stamps as described in 'merchandise') can be carried around inside the van, and just brought out by the crew.
+- staff? - driver and partner, optionally a cashier - double as drivers. (Also - i have a bias towards giving ownership to the workers, and I would opt for it in the case of the van operators).
+
+>Business
+Each of the ideas showcased in these paragraphs could become a standalone founding idea for a business - but in my belief, the last one (Moblile Stores as a model of operations) is absolutely the sexiest. Therefore, I'd extract it from the envelope of the rest of the project, and propose a few business models around it. Said models revolve around the following variables:
+
+>>to what extent our Business controls the fleet:
+a) it *rents* the vans; the customer pays for Van-as-a-Service (VAAS). [recommended on early stages and during validation period]
+b) it leases vans from the dealership; the customer pays for VAAS. [recommended for a validated operation model, where the demand turned out to be highly fluctuating]
+c) it owns vans; the customer pays for VAAS. [recommended for the more ownership+responsibility models; not recoomended for the shifted ownership/more platform-y models. both discussed later]
+d) it owns vans; the customer *leases* a van, and pays for additional services. [recommended for the absolutely largest customers if the solution is to become mainstream. late-stage. highly likely, that the large "customers" will not want to outsource it in such a market, therefore prob. won't ever be sustainable. idk.]
+
+>>to what extent our Business sells its own merchandise:
+a) business is an exclusively B2B service; no B2C actions whatsoever [imo best one, but figuring out the differenciation factor (moat) will become crucial; first-mover advantage won't suffice.]
+b) business is mostly a B2B service; own merchandise was evaluated as a good way to enter the market (i don't think it is tho), and remained as a side-activity
+c) business concentrates on its own B2C merchandise service; additional branch deriving from it evolves into a B2B service for other businesses (we prefer them to outsource this activity to us than copy it). [this option assumes, that a different pillar than management (merchandise/marketing) is the core of the business.]
+
+>>to what extent our Business takes responsibilty&gains from the serviced businesses:
+a) no responsibility, no gains: we are paid strictly for the VaaS and accompanying services. We have no own branding on the vans. We take a fixed amount regardless of the sales. [preferable, if we have many one-time clients, and there is a huge competition directly to our business model.]
+b) moderate responsibility, moderate gains: we become a platform; vans are branded as "<Clothing Brand>, powered by <VaaS>". We are recognisable. We support the businesses with the branding. We take a percentage of the sales and some smaller amount for the vans themselves. [preferable generally]
+c) high responsibility, high gains: we become a franchise; vans are branded as "<VaaS>; <Clothing Brand>. We are the core; we take majority of the gains, and majority of responsibilities. [preferrable if the merchandise/sales are successful cores of the idea.]
+
+>>which additional services are conducted by our Business, and which are outsourced to contractors - or left to the client:
+a) crews [our own/subcontractor's/client's]
+b) marketing/promo [our own/subcontractor's/client's]
+c) merchandise [[our own/subcontractor's/client's]] (this one allows other franchses to grow on our platform, i.e. a brand allows people to go and sell its products by themselves)
+d) legal/compliance(!) [our own/subcontractor's/client's]
+

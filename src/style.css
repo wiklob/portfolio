@@ -707,3 +707,19 @@ nav {
     margin-top: 8px;
     font-style: italic;
 }
+
+.idea-section-header {
+    font-family: inter, sans-serif;
+    font-weight: 600;
+    font-size: clamp(16px, 3vw, 22px);
+    margin: 24px 0 12px 0;
+    color: black;
+}
+
+.idea-section-subheader {
+    font-family: inter, sans-serif;
+    font-weight: 500;
+    font-size: clamp(14px, 2.5vw, 18px);
+    margin: 18px 0 8px 0;
+    color: black;
+}
