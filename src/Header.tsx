@@ -7,6 +7,7 @@ function Header() {
         
         <NavLink to="/projects" className="header-content"> my projects </NavLink>
         <NavLink to="/blog" className="header-content"> blog </NavLink>
+        <NavLink to="/ideas" className="header-content"> ideas </NavLink>
         <NavLink to="/spacecannon" className="header-content"> space cannon </NavLink>
         </nav>
     </header>

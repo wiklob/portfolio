@@ -5,6 +5,7 @@ import Projects from './Projects'
 import Blog from './Blog'
 import Home from './Home'
 import Spacecannon from './Spacecannon'
+import Ideas from './Ideas'
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/about" element={<About/ >} />
           <Route path="/projects" element={<Projects/ >} />
           <Route path="/blog" element={<Blog/ >} />
+          <Route path="/ideas" element={<Ideas/ >} />
           <Route path="/spacecannon" element={<Spacecannon/ >} />
         </Routes>
       </BrowserRouter>
