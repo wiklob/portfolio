@@ -191,8 +191,12 @@ function Ideas() {
           }
         }
 
-        // Sort by filename (which includes order prefix) descending
-        loadedIdeas.sort((a, b) => b.id.localeCompare(a.id))
+        // Sort by filename - lower numbers first (at top of page)
+        loadedIdeas.sort((a, b) => {
+          const numA = parseInt(a.id.match(/^(\d+)/)?.[1] || '0')
+          const numB = parseInt(b.id.match(/^(\d+)/)?.[1] || '0')
+          return numA - numB
+        })
 
         setIdeas(loadedIdeas)
       } catch (e) {

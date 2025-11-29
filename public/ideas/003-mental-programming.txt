@@ -1,0 +1,21 @@
+---
+title: Mental Programming
+date: 2024-05
+tags: education
+---
+
+>Short summary
+>>One liner
+A book describing highly unorthodox teaching methods of my high-school IT tutor, yielding astonishing results for many.
+>>Example
+Communication with Subconscience is crucial to solemn Creationary Work, powered by the following cycle: 1. stream of consciousness 2. 45-60 minutes of focus 3. a longer break for unrelated tasks 4. going for a walk 5. eureka moment 6. noting down the development 7. repeat.
+>>Why was meant to work
+Creative and Creationary Thinking are yet to be taught efficiently. The Method comprises a set of practices closely alligned to natural manner of learning: one group with people of different skill levels, post-class short explanatory lecutres given by the more advanced students, hands-on learning with marginal teacher participation. While perfectly applicable and proven successful in the field of IT, such approach could very well proliferate to different learning environments, such as Maths. 
+>>Why I did not do it
+In order to give proper reflection of the teaching methods, I believed to posess in-depth knowledge regarding crucial part of the Method - 1 on 1 tutoring by the teacher himself (outside of class) - and I had none of such. Failure to find a co-author disencouraged me from doing it. As I write it now, November 2025, I believe neither of those were true: Method is still super important, potentially creates an opening for new way of post-AI learning, and not properly described.
+>>Who captured it instead of me
+This is IT, a polish YT channel producing docummentaries and interviews with scientific figures, has published an hour-long movie about him (a YEAR after I came up with this idea); it made 270k views 4 months after release. I believe, that the topic remains largely untackled nevertheless, in particular through scientific, educational, or any such type of lens... especially given that his alumni from a decade or so ago now lead OpenAI - super sexy marketing-wise.
+
+>Notes & Images (in polish)
+>>Disclaimer
+This section is left empty purposefully. While I have no barriers in sharing my own insights, I do not think its justified to do so in affairs connected to other people named by Surname. Of course, it would not be a breach of a privacy, morally or journalistically - it was mostly my plans and drawings regarding the structure of the book, and all of the data was of my creation - but even then... I just don't think its appropriate. Yep. Sorry.
