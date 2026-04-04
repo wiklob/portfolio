@@ -2,7 +2,7 @@ function Home() {
     return (
         <div className="home">
             <div className="home-header">
-                <div className="home-title">Wiktor Loboda</div>
+                <div className="home-title">Wiktor Łoboda</div>
                 <div className="home-subtitle">
                     Building things. Based in Poland, dreaming of San Francisco.
                 </div>

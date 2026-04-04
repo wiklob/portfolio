@@ -1,0 +1,70 @@
+/* Spacecannon - preserved from original */
+.spacecannon-map-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spacecannon-map {
+  position: relative;
+}
+
+.spacecannon-aim {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9998;
+}
+
+.spacecannon-aim-north {
+  position: fixed;
+  width: 0px;
+  height: 100vh;
+  border-style: solid;
+  border-color: black;
+  border-width: 0 2px 0 0;
+  pointer-events: none;
+  transform: translate(0, calc(-100% - 25px));
+  z-index: 9998;
+}
+
+.spacecannon-aim-south {
+  position: fixed;
+  width: 0px;
+  height: 100vh;
+  border-style: solid;
+  border-color: black;
+  border-width: 0 2px 0 0;
+  pointer-events: none;
+  transform: translate(0, 25px);
+  z-index: 9998;
+}
+
+.spacecannon-aim-east {
+  position: fixed;
+  width: 100vw;
+  height: 0px;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px 0 0 0;
+  pointer-events: none;
+  transform: translate(25px, 0);
+  z-index: 9998;
+}
+
+.spacecannon-aim-west {
+  position: fixed;
+  width: 100vw;
+  height: 0px;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px 0 0 0;
+  pointer-events: none;
+  transform: translate(calc(-100% - 25px), 0);
+  z-index: 9998;
+}
