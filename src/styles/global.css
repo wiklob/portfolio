@@ -1,63 +1,40 @@
 @import './variables.css';
 
-/* Reset & Base */
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
-body {
+html, body {
   margin: 0;
-  padding-top: var(--header-height);
-  background-color: var(--color-bg);
+  padding: 0;
+  background: var(--color-bg);
   color: var(--color-text);
+  font-family: var(--font-mono);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "calt", "ss01";
+  overflow-x: hidden;
 }
 
-p {
-  color: var(--color-text);
-  font-size: 15px;
-  font-family: var(--font-body);
-  font-weight: 350;
-  line-height: 1.6;
+#root {
+  min-height: 100vh;
 }
 
-h1 {
-  color: var(--color-text);
-  font-size: 20px;
-  font-family: var(--font-sans);
-  font-weight: 450;
+button {
+  font-family: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: inherit;
 }
 
 a {
-  transition: color var(--transition-fast), opacity var(--transition-fast);
-}
-
-/* Shared utility */
-.link-styling-remove {
   color: inherit;
   text-decoration: none;
-  cursor: pointer;
 }
 
-.link-styling-remove:hover {
-  color: var(--color-accent);
-}
-
-/* Page fade-in animation */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Divider */
-.divider {
-  height: 2px;
-  background: var(--color-border);
-  width: 100%;
+::selection {
+  background: var(--color-accent);
+  color: var(--color-surface);
 }

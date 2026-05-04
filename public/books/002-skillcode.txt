@@ -1,7 +1,0 @@
----
-title: Skill Code
-date: 2026-01
-tags: skills
----
->Overview
-Skill Code by Matt Beane covers the master and apprentice relationship as crucial to skill development. The beginning of the book showcases three important qualities of skill acquisition: complexity, challenge, and connection. All of them are quite self-explanatory, hence one-liners shall suffice: complexity
