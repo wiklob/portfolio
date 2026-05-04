@@ -71,7 +71,7 @@ const projects: Project[] = [
           {
             kind: 'p',
             text:
-              'Cofounder and "Operational Director" — the guy who makes it work. I wrote dedicated software for us (check [[edit]]), recruited most of the team, and together with our Editor-in-Chief Szymon Kwidziński, delivered the first print edition for the Polish Business Forum. Now I begin the post-release phase of implementing all the learnings from the first run, getting proper financing, and establishing an NGO.',
+              'Cofounder and "Operational Director" — the guy who makes it work. I wrote dedicated software for us (check [[edit]]), recruited most of the team, and together with my cofounder and editor-in-chief, delivered the first print edition for the Polish Business Forum. Now I begin the post-release phase of implementing all the learnings from the first run, getting proper financing, and establishing an NGO.',
           },
         ],
       },
