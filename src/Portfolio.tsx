@@ -144,7 +144,7 @@ const projects: Project[] = [
           {
             kind: 'p',
             text:
-              'Event aggregator browser — Google Flights for events. Browse all professional gatherings (conferences, summits, congresses, trade fairs) and see standardized data: agendas, speakers, floor plans. I built most of an MVP through 2025, paused in early 2026 to focus on Carte Blanche, plan to finish it this summer.',
+              'Event aggregator browser — Google Flights for events. Browse all professional gatherings (conferences, summits, congresses, trade fairs) and see standardized data: agendas, speakers, floor plans. I built most of an MVP through 2025, paused in early 2026 to focus on re:print, plan to finish it this summer.',
           },
         ],
       },
@@ -169,7 +169,7 @@ const projects: Project[] = [
           {
             kind: 'p',
             text:
-              "Started May 2025. Re-learned full stack coding via Claude Code over the summer. I focused on frontend, my cofounder on backend — nice guy, but we didn't end up shipping together; he left in early September. I continued alone, but loneliness and inexperience don't go well together; made a proper return to it around January 2026. Most of the MVP is done — app, browser, chats, aggregator engine — but the aggregator isn't properly scaled, in coverage or depth. I switched to [[lambert|The Lambert]] (didn't want to work alone anymore), then to [[carte-blanche|Carte Blanche]], where the path to ramen profitability looks simpler. Plan to finish Networker over the summer.",
+              "Started May 2025. Re-learned full stack coding via Claude Code over the summer. I focused on frontend, my cofounder on backend — nice guy, but we didn't end up shipping together; he left in early September. I continued alone, but loneliness and inexperience don't go well together; made a proper return to it around January 2026. Most of the MVP is done — app, browser, chats, aggregator engine — but the aggregator isn't properly scaled, in coverage or depth. I switched to [[lambert|The Lambert]] (didn't want to work alone anymore), then to [[reprint|re:print]], where the path to ramen profitability looks simpler. Plan to finish Networker over the summer.",
           },
         ],
       },
@@ -232,11 +232,12 @@ const projects: Project[] = [
     ],
   },
   {
-    id: 'carte-blanche',
-    name: 'Carte Blanche',
+    id: 'reprint',
+    name: 're:print',
     tagline: 'New-gen Newspapers',
     status: 'main focus',
-    icon: '/carteblanche.jpeg',
+    icon: '/reprint_icon.svg',
+    url: 'https://reprint.so',
     sections: [
       {
         title: 'tldr',
@@ -244,26 +245,30 @@ const projects: Project[] = [
           {
             kind: 'p',
             text:
-              'Newspapers are the only medium that never made it into the modern creative economy. Carte Blanche fixes that: an on-demand, custom-curated newspaper, distributed via printers in coffee stores. Print and go.',
+              'A reading app that compounds everything you read — newsletters, news, blogs, the people you follow — into one curated newspaper, generated on demand. Pick your sources, get your edition. Formerly Carte Blanche; now built out, rebranded re:print, and nearly ready.',
           },
         ],
       },
       {
         title: 'the thesis',
         blocks: [
-          { kind: 'p', text: 'Newspapers got stuck:' },
+          {
+            kind: 'p',
+            text:
+              'Newspapers are the only medium that never made it into the modern creator economy. They got stuck:',
+          },
           {
             kind: 'ul',
             items: [
               'Legitimacy built on brands instead of editors → no creator economy.',
-              'Each newspaper looks the same → zero customization.',
+              'Every paper looks the same → zero customization.',
               'You have to walk to a kiosk → distribution sucks.',
             ],
           },
           {
             kind: 'p',
             text:
-              "Flip all three and you get Carte Blanche. I like this framing because it shows I literally own a medium — but distribution is the #1 problem in the industry, so that's the lead.",
+              "Flip all three and you get re:print. I like this framing because it shows I literally own a medium — but distribution is the industry's #1 problem, so that's the lead.",
           },
         ],
       },
@@ -278,7 +283,17 @@ const projects: Project[] = [
           {
             kind: 'p',
             text:
-              'The sharing layer is what makes it actually interesting. "Read what Paul Graham reads" — his favourite tweet, a quote from a book, a newspaper article, a breakthrough paper. He gets a "share to app" button and a revenue share; everyone else gets a curated brief of what inspires PG. Getting a few cool people to use it is crucial. If that happens, it might just get me to ramen profitable — which is all I want before I think bigger.',
+              'The sharing layer is what makes it interesting. "Read what Paul Graham reads" — his favourite tweet, a quote from a book, a breakthrough paper. He gets a share button and a revenue share; everyone else gets a curated brief of what inspires PG. Get a few cool people on it and it might just get me to ramen profitable — which is all I want before thinking bigger.',
+          },
+        ],
+      },
+      {
+        title: 'the bet',
+        blocks: [
+          {
+            kind: 'p',
+            text:
+              "The content space is infinite, and what's said isn't mine to control — so the one thing re:print owns is the quality of the reading itself. That's why beauty isn't decoration bolted on at the end; it's the whole strategy. Two surfaces carry it: the feed (curation) and the editions (the newspaper). Both have to be exquisite — the kind of thing you show a friend just to say look how beautiful this is.",
           },
         ],
       },
@@ -288,7 +303,7 @@ const projects: Project[] = [
           {
             kind: 'p',
             text:
-              "The original sexy idea: people print themselves a newspaper at a coffee spot counter — meter-wide status symbol, read alongside their matcha. I still like it. But scaling printers sucks and printing costs money, so it's the second layer, not the first. The app works without it.",
+              "The original sexy idea: you print yourself a newspaper at the coffee-shop counter — a meter-wide status symbol, read alongside your matcha. I still love it. But scaling printers sucks and printing costs money, so it's the second layer, not the first. The app works fully without it.",
           },
         ],
       },
@@ -298,7 +313,7 @@ const projects: Project[] = [
           {
             kind: 'p',
             text:
-              'Working demo, getting better day by day. New features daily. Free for everyone. Try it.',
+              'Built out and nearly there. It aggregates real sources — news, newsletters (forward them in by email), blogs, X and Bluesky, even a weather widget — compounds them, and prints you a real edition, laid out like a paper. Rebranded from Carte Blanche to re:print along the way, with a proper visual system: olive ink, paper neutrals, a serif masthead. Take a look at reprint.so.',
           },
         ],
       },
@@ -308,17 +323,7 @@ const projects: Project[] = [
           {
             kind: 'p',
             text:
-              "This is the simplest, most straightforward project I've had so far. Technically simple as fuck. I expect legal challenges around creative rights — they'll constrain the value, but I think it's a nice product even without breaking them lol.",
-          },
-        ],
-      },
-      {
-        title: 'disclaimer',
-        blocks: [
-          {
-            kind: 'p',
-            text:
-              "The name isn't great. Open to recommendations — write me if you have one.",
+              "Finish user-generated ingestion (paste a link, forward a newsletter, a quote bookmarklet), then launch, then a native iOS app so you can share anything into your paper from anywhere. I expect some legal friction around creative rights — it'll constrain the value, but it's a lovely product even without pushing on that.",
           },
         ],
       },
@@ -326,7 +331,7 @@ const projects: Project[] = [
   },
 ]
 
-const projectOrder = ['lambert', 'carte-blanche', 'edit', 'artists', 'networker']
+const projectOrder = ['lambert', 'reprint', 'edit', 'artists', 'networker']
 const orderedProjects = [...projects].sort(
   (a, b) => projectOrder.indexOf(a.id) - projectOrder.indexOf(b.id)
 )
@@ -355,7 +360,7 @@ const aboutSections: Section[] = [
       {
         kind: 'p',
         text:
-          'Earlier I worked on [[networker|Networker]]. Learned a lot, but was too lonely, and switched to something simpler. Now I work on [[carte-blanche|Carte Blanche]]: a new take on newspapers. Read about it or try it.',
+          'Earlier I worked on [[networker|Networker]]. Learned a lot, but was too lonely, and switched to something simpler. Now I work on [[reprint|re:print]]: a new take on newspapers. Read about it or try it.',
       },
     ],
   },
@@ -365,7 +370,7 @@ const aboutSections: Section[] = [
       {
         kind: 'p',
         text:
-          "I always tend to say, that im really good in the core stuff: I know how to read, write, think, speak, and do my best to listen. I like to decouple things into first principles; that allows me to question simple stuff in depth, and come up with risky but sexy ideas for projects (check out [[carte-blanche|Carte Blanche]]). I also consider myself a complete person — I'm not a genius in anything in particular, but am, in fact, an agentic generalist — I am good in organisation building, project management, but also in creative works or just coding in the basement.",
+          "I always tend to say, that im really good in the core stuff: I know how to read, write, think, speak, and do my best to listen. I like to decouple things into first principles; that allows me to question simple stuff in depth, and come up with risky but sexy ideas for projects (check out [[reprint|re:print]]). I also consider myself a complete person — I'm not a genius in anything in particular, but am, in fact, an agentic generalist — I am good in organisation building, project management, but also in creative works or just coding in the basement.",
       },
       {
         kind: 'p',
@@ -710,7 +715,7 @@ function CvBody({ onRef }: { onRef: (target: string) => void }) {
 
         <div className="pf-cv-entry">
           <div className="pf-cv-entry-org">
-            <RefLink target="carte-blanche" onRef={onRef}>Carte Blanche</RefLink> (2026 – Now)
+            <RefLink target="reprint" onRef={onRef}>re:print</RefLink> (2026 – Now)
           </div>
           <div className="pf-cv-entry-role">Founder</div>
           <ul className="pf-cv-entry-bullets">
@@ -718,7 +723,7 @@ function CvBody({ onRef }: { onRef: (target: string) => void }) {
               On-demand custom-curated newspaper — bringing newspapers into the modern
               creator economy.
             </li>
-            <li>Working demo live, free for everyone. Building solo.</li>
+            <li>Built out and nearly launched. Free for everyone. Building solo.</li>
           </ul>
         </div>
 
@@ -894,8 +899,8 @@ function Portfolio() {
               The Lambert
             </RefLink>
             , english-language journal of polish youth; now focusing on{' '}
-            <RefLink target="carte-blanche" onRef={handleRef}>
-              Carte Blanche
+            <RefLink target="reprint" onRef={handleRef}>
+              re:print
             </RefLink>
             , reinventing newspapers for modern media era. Particular creative
             interest in media, art, and inter-human activities. Now also a
