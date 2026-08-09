@@ -1,0 +1,36 @@
+name: refresh essays
+
+# Pulls new Substack titles into index.html once a day, so the list stays
+# current without a deploy. Netlify also runs the same script on every build.
+
+on:
+  schedule:
+    - cron: '23 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - run: node scripts/build-essays.mjs
+
+      - name: Commit if the list changed
+        run: |
+          if git diff --quiet index.html; then
+            echo "no change"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Refresh essay list from RSS"
+          git push
