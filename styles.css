@@ -1,0 +1,270 @@
+:root {
+  --bg: #f6f4ee;
+  --ink: #1a1a17;
+  --ink-soft: #4d4c45;
+  --muted: #8d8b80;
+  --accent: #c8553d;
+  --rule: rgba(26, 26, 23, 0.14);
+
+  --serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14140f;
+    --ink: #eeece1;
+    --ink-soft: #b6b3a5;
+    --muted: #7e7c70;
+    --accent: #e2795c;
+    --rule: rgba(238, 236, 225, 0.16);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  max-width: 36rem;
+  margin: 0 auto;
+  padding: 5.5rem 1.5rem 6rem;
+}
+
+/* ---- intro ---- */
+
+.intro {
+  margin-bottom: 3.25rem;
+}
+
+h1 {
+  margin: 0 0 0.9rem;
+  font-size: 2.1rem;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+}
+
+.intro p {
+  margin: 0;
+  max-width: 30rem;
+  color: var(--ink-soft);
+}
+
+.intro em {
+  font-style: italic;
+  color: var(--ink);
+}
+
+/* ---- sections ---- */
+
+section {
+  border-top: 1px solid var(--rule);
+  padding-top: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+section:last-of-type {
+  margin-bottom: 0;
+}
+
+h2 {
+  margin: 0 0 1.75rem;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.note {
+  margin: -0.75rem 0 2rem;
+  font-style: italic;
+  color: var(--ink-soft);
+  max-width: 31rem;
+}
+
+/* ---- entries ---- */
+
+.entry {
+  margin-bottom: 2.25rem;
+}
+
+.entry:last-child {
+  margin-bottom: 0;
+}
+
+.head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.head a,
+.head .name {
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.head a::after {
+  content: '↗';
+  margin-left: 0.3em;
+  font-size: 0.8em;
+  color: var(--muted);
+  transition: color 140ms ease;
+}
+
+.head a:hover,
+.head a:focus-visible {
+  color: var(--accent);
+}
+
+.head a:hover::after,
+.head a:focus-visible::after {
+  color: var(--accent);
+}
+
+.head .name {
+  color: var(--muted);
+}
+
+/* ---- essays ---- */
+
+.essay {
+  margin-bottom: 1.15rem;
+}
+
+.essay:last-child {
+  margin-bottom: 0;
+}
+
+.essay .head {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+}
+
+.essay .head a {
+  white-space: normal;
+}
+
+.dots {
+  flex: 1 1 1.5rem;
+  min-width: 1.5rem;
+  border-bottom: 1px dotted var(--rule);
+  transform: translateY(-0.3em);
+}
+
+.meta {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-align: right;
+}
+
+.desc {
+  margin: 0.55rem 0 0;
+  max-width: 31rem;
+  color: var(--ink-soft);
+}
+
+code {
+  font-family: var(--mono);
+  font-size: 0.85em;
+  color: var(--ink);
+}
+
+/* ---- prose links ---- */
+
+.note a,
+.desc a,
+.intro a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 0.2em;
+}
+
+.note a:hover,
+.desc a:hover,
+.intro a:hover {
+  color: var(--accent);
+}
+
+/* ---- contact links ---- */
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  list-style: none;
+  font-family: var(--mono);
+  font-size: 0.76rem;
+}
+
+.links a {
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 0.15em;
+}
+
+.links a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ---- small screens ---- */
+
+@media (max-width: 34rem) {
+  main {
+    padding: 3.5rem 1.25rem 4rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .head {
+    flex-wrap: wrap;
+    gap: 0.15rem 0.6rem;
+  }
+
+  .dots {
+    display: none;
+  }
+
+  .meta {
+    flex-basis: 100%;
+    text-align: left;
+  }
+}

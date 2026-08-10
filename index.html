@@ -1,15 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Wiktor Łoboda</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <div id="root"></div>
-        <script type="module" src="/src/main.tsx"></script>
-    </body>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wiktor Łoboda</title>
+<meta name="description" content="I build things end to end: concept, code, design, and the unglamorous parts in between. Currently building reprint, a personal newspaper.">
+<meta name="author" content="Wiktor Łoboda">
+<meta property="og:title" content="Wiktor Łoboda">
+<meta property="og:description" content="I build things end to end: concept, code, design, and the unglamorous parts in between. Currently building reprint, a personal newspaper.">
+<meta property="og:type" content="website">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<main>
+
+  <header class="intro">
+    <ul class="links">
+      <li><a href="mailto:reprintfounder@gmail.com" target="_blank" rel="noopener noreferrer">email</a></li>
+      <li><a href="https://github.com/wiklob" target="_blank" rel="noopener noreferrer">github</a></li>
+      <li><a href="https://x.com/LobodaWiktor" target="_blank" rel="noopener noreferrer">x</a></li>
+      <li><a href="https://www.instagram.com/wik.lob/" target="_blank" rel="noopener noreferrer">instagram</a></li>
+    </ul>
+    <h1>Wiktor Łoboda</h1>
+    <p>
+      I build things end to end: concept, code, design, and the unglamorous parts
+      in between. Right now nearly all of that goes into
+      <a href="https://reprint.so" rel="noopener"><em>reprint</em></a>.
+    </p>
+  </header>
+
+  <section>
+    <h2>Now</h2>
+
+    <article class="entry">
+      <p class="head">
+        <a href="https://reprint.so" rel="noopener">reprint.so</a>
+        <span class="dots" aria-hidden="true"></span>
+        <span class="meta">personal newspaper</span>
+      </p>
+      <p class="desc">
+        Your personal newspaper: it aggregates your newsletters, news, Substacks
+        and tweets. Read it as a web app, or let the layout engine set it as an
+        actual newspaper. Three angles at once: a pretty reader, physical
+        distribution, and a news aggregation tool. Making newspapers cool again.
+      </p>
+    </article>
+  </section>
+
+  <section>
+    <h2>Code</h2>
+    <p class="note">
+      Public repos on <a href="https://github.com/wiklob" rel="noopener">github.com/wiklob</a>.
+      Coding daily for a year now.
+    </p>
+
+    <article class="entry">
+      <p class="head">
+        <a href="https://wiklob.dev" rel="noopener">wiklob.dev</a>
+        <span class="dots" aria-hidden="true"></span>
+        <span class="meta">coding telemetry</span>
+      </p>
+      <p class="desc">
+        Telemetry from some of my coding sessions. The tools producing it are built
+        in-house, and they exist to auto-improve the coding setup itself.
+      </p>
+    </article>
+
+    <article class="entry">
+      <p class="head">
+        <a href="https://github.com/wiklob/linear-mcp-lean" rel="noopener">linear-mcp-lean</a>
+        <span class="dots" aria-hidden="true"></span>
+        <span class="meta">self-hosted MCP proxy</span>
+      </p>
+      <p class="desc">
+        Sits between the coding machine and Linear's MCP server and strips every
+        response down to fields requested by the caller. About 75% fewer bytes per
+        call, so 75% fewer tokens, and less waiting.
+      </p>
+    </article>
+
+    <article class="entry">
+      <p class="head">
+        <a href="https://github.com/wiklob/v-coding-setup" rel="noopener">v-coding-setup</a>
+        <span class="dots" aria-hidden="true"></span>
+        <span class="meta">my coding pipeline</span>
+      </p>
+      <p class="desc">
+        The setup I work in, built on Linear + Claude Code. It breaks ideas into
+        projects, projects into tickets, and then drives them to done with
+        end-to-end <code>/go</code> runs. Telemetry accessible at
+        <a href="https://wiklob.dev" rel="noopener">wiklob.dev</a>.
+      </p>
+    </article>
+
+    <article class="entry">
+      <p class="head">
+        <a href="https://github.com/wiklob/claude-model-router" rel="noopener">claude-model-router</a>
+        <span class="dots" aria-hidden="true"></span>
+        <span class="meta">model switching</span>
+      </p>
+      <p class="desc">
+        Manages which models the Claude Code harness talks to. Makes CLIProxyAPI
+        usable from inside the harness: switch models mid-session, pick custom ones
+        straight from the native <code>/model</code> list. Do not use it: I got
+        banned on ChatGPT for it, even though their chief Codexer
+        <a href="https://x.com/thsottiaux/status/2076119366647894371" rel="noopener">recommended it</a>.
+      </p>
+    </article>
+  </section>
+
+  <section>
+    <h2>Before</h2>
+
+    <article class="entry">
+      <p class="head">
+        <a href="https://thelambert.org" rel="noopener">thelambert.org</a>
+        <span class="dots" aria-hidden="true"></span>
+        <span class="meta">international journal of Poles</span>
+      </p>
+      <p class="desc">
+        A quarterly written in English by Polish students scattered across the world.
+        I co-lead it with a friend; the first print edition is out.
+      </p>
+    </article>
+
+    <article class="entry">
+      <p class="head">
+        <a href="https://editapp.co" rel="noopener">editapp.co</a>
+        <span class="dots" aria-hidden="true"></span>
+        <span class="meta">my own Notion</span>
+      </p>
+      <p class="desc">
+        I didn't want to pay for Notion, so I wrote my own. The Lambert runs on it.
+      </p>
+    </article>
+
+    <article class="entry">
+      <p class="head">
+        <span class="name">networker</span>
+        <span class="dots" aria-hidden="true"></span>
+        <span class="meta">event aggregator · abandoned</span>
+      </p>
+      <p class="desc">
+        My first project, and how I learned fullstack from scratch. The discovery
+        engine works (give it an event name, it finds the event), but automating
+        that discovery was the whole point, and I ran out of momentum before getting
+        there. Parked in September 2025.
+      </p>
+    </article>
+  </section>
+
+  <section>
+    <h2>For artists</h2>
+
+    <article class="entry">
+      <p class="head">
+        <a href="https://tatestrash.com" rel="noopener">tatestrash.com</a>
+        <span class="dots" aria-hidden="true"></span>
+        <span class="meta">tr@$h b@gs</span>
+      </p>
+      <p class="desc">
+        A tr@$hy store for a friend who sells tr@$h b@gs. Genuinely worth a click,
+        and a validated product: over 100 units sold.
+      </p>
+    </article>
+
+    <article class="entry">
+      <p class="head">
+        <a href="https://skirtdatabase.com" rel="noopener">skirtdatabase.com</a>
+        <span class="dots" aria-hidden="true"></span>
+        <span class="meta">fashion, first one</span>
+      </p>
+      <p class="desc">
+        First project of this kind, for a friend studying fashion design. Not
+        commercial, just for the sake of working with interesting people.
+      </p>
+    </article>
+
+    <article class="entry">
+      <p class="head">
+        <a href="https://shirtdatabase.com" rel="noopener">shirtdatabase.com</a>
+        <span class="dots" aria-hidden="true"></span>
+        <span class="meta">fashion, second one</span>
+      </p>
+      <p class="desc">
+        Same sort of thing, same designer, one season later.
+      </p>
+    </article>
+  </section>
+
+  <section>
+    <h2>Essays</h2>
+    <p class="note">
+      On <a href="https://wiktorloboda.substack.com" rel="noopener">Substack</a>.
+      The Cognitive Forest is in English; the rest are Polish, and literary.
+    </p>
+
+    <!-- essays:begin — generated by scripts/build-essays.mjs, do not edit by hand -->
+    <article class="essay">
+      <p class="head">
+        <a href="https://wiktorloboda.substack.com/p/the-cognitive-forest" rel="noopener">The Cognitive Forest</a>
+        <span class="dots" aria-hidden="true"></span>
+        <span class="meta">may 2026</span>
+      </p>
+    </article>
+
+    <article class="essay">
+      <p class="head">
+        <a href="https://wiktorloboda.substack.com/p/wybaczanie" rel="noopener">Wybaczanie</a>
+        <span class="dots" aria-hidden="true"></span>
+        <span class="meta">june 2026</span>
+      </p>
+    </article>
+
+    <article class="essay">
+      <p class="head">
+        <a href="https://wiktorloboda.substack.com/p/niepewnosc-wiara-nadzieja" rel="noopener">Niepewność, wiara, nadzieja</a>
+        <span class="dots" aria-hidden="true"></span>
+        <span class="meta">may 2026</span>
+      </p>
+    </article>
+
+    <article class="essay">
+      <p class="head">
+        <a href="https://wiktorloboda.substack.com/p/mga" rel="noopener">Mgła</a>
+        <span class="dots" aria-hidden="true"></span>
+        <span class="meta">may 2026</span>
+      </p>
+    </article>
+    <!-- essays:end -->
+  </section>
+
+
+</main>
+</body>
 </html>
